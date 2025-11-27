@@ -4,7 +4,7 @@ import { useState } from "react";
 const Notestate = (props) => {
   const mynote = [];
   const token_key = localStorage.getItem('token');
-  const host = "http://localhost:5000";
+  const host = "https://gnote-test-backend.vercel.app/";
   const [updnote, setupdnote] = useState(mynote);
     const fetchnote = async () => {
       const response = await fetch(`${host}/fetchnote`, {
