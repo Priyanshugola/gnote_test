@@ -2,7 +2,7 @@ import React,{useState} from 'react'
 // import {useHistory} from 'react-router-dom'
 
 export default function Login() {
-      const host = "http://localhost:5000";
+      const host = "https://gnote-test-backend.vercel.app";
     //   const history = useHistory();
     const [login_crad, setlogin_crad] = useState({email :'',password:''})
     const formsubmit = async(e)=>{
