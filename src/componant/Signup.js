@@ -5,7 +5,7 @@ export default function Signup() {
       //   const history = useHistory();
       const [login_crad, setlogin_crad] = useState({name:'',email :'',password:''})
       const formsubmit = async(e)=>{
-          // alert('ss');
+          alert('ss');
            e.preventDefault();
         const response = await fetch(`${host}/api/auth`, {
           method: "POST",
