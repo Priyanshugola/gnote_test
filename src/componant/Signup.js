@@ -7,25 +7,47 @@ export default function Signup() {
       const formsubmit = async(e)=>{
           // alert('ss');
            e.preventDefault();
-        const response = await fetch(`${host}/api/auth`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-          Name: login_crad.name,
-          Mail: login_crad.email,
-          Password: login_crad.password
-          })
-        });
-        const json = await response.json();
-        console.log(json)
-        if(json.success){
-          localStorage.setItem('token',json.token);
-          window.open('/','_top')
-        }else{
-          alert('invalid data');
-        }
+        // const response = await fetch(`${host}/api/auth`, {
+        //   method: "POST",
+        //   headers: {
+        //     "Content-Type": "application/json",
+        //   },
+        //   body: JSON.stringify({
+        //   Name: login_crad.name,
+        //   Mail: login_crad.email,
+        //   Password: login_crad.password
+        //   })
+        // });
+        // const json = await response.json();
+        // console.log(json)
+        // if(json.success){
+        //   localStorage.setItem('token',json.token);
+        //   window.open('/','_top')
+        // }else{
+        //   alert('invalid data');
+        // }
+          const response = await fetch(`${host}/api/auth`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify({
+    Name: login_crad.name,
+    Mail: login_crad.email,
+    Password: login_crad.password
+  })
+});
+
+const json = await response.json();
+console.log("Backend Response:", json);
+
+if(json.success){
+  localStorage.setItem('token', json.token);
+  window.open('/', '_top');
+} else {
+  alert(json.error || "Signup failed");
+}
+
   
       }
       const onchange = (e)=>{
