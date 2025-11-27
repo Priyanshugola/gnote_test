@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 
 export default function Signup() {
-    const host = "http://localhost:5000";
+    const host = "https://gnote-test-backend.vercel.app/";
       //   const history = useHistory();
       const [login_crad, setlogin_crad] = useState({name:'',email :'',password:''})
       const formsubmit = async(e)=>{
